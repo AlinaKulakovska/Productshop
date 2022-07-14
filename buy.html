@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Buy</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inconsolata:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- font-family: 'Dancing Script', cursive; -family: 'Inconsolata', monospace; -->
+    <link rel="stylesheet" href="./style-business.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1> <i class='bx bx-heart-circle'></i><a href="./index.html">TrackMate</a></h1>
+            <div class="nav">
+                <a href="#" class="nav_link">Вопросы и ответы</a>
+                <a href="#" class="nav_link"><i class='bx bxs-user-circle'></i> Войти</a>
+                <a href="./busket.html" class="nav_link"><i class='bx bx-shopping-bag'></i></a>
+                <a href="./buy.html"><button> Купить</button></a> </div>
+        </div>
+    </header>
+
+    <div class="progerss">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <div class="all">
+        <div class="image">
+            <img src="https://static.wixstatic.com/media/c837a6_e211e4cc12b84a2884128090c1c39a5a~mv2.png/v1/fill/w_500,h_500,al_c,q_90,usm_0.66_1.00_0.01/c837a6_e211e4cc12b84a2884128090c1c39a5a~mv2.webp"
+                alt="">
+            <p>Это описание товара. чтобы привлечь внимание
+                покупателей. Опишите ваш товар коротко и ясно,
+                используйте уникальные ключевые слова.
+            </p>
+        </div>
+
+        <div class="description">
+            <h1>0.4 TrackMate XE</h1>
+            <p>Артикул: 0001</p>
+            <h3 id="price">250$</h3>
+            <p>Цвет</p>
+            <div class="color">
+                <input type="radio" class="radio" name="color" value="white" id="white" checked>
+                <input type="radio" class="radio" name="color" value="black" id="black">
+                <input type="radio" class="radio" name="color" value="blue" id="blue">
+            </div>
+            <label for="count">Количество </label><input type="number" id="num" min="1" value="1">
+            <button id="add">Добавить в корзину</button>
+            <div class="dropdown">
+                <div class="h3">
+                    <h3>О ТОВАРЕ +</h3>
+                    <p class="productp">Это информация о товаре. Расскажите подробно, что он из себя представляет, и
+                        перечислите всю
+                        необходимую информацию: размеры, материалы, инструкции по уходу и т. д. Это также хорошая
+                        возможность сообщить, в чем особенность вашей продукции и какую выгоду покупатели получат в
+                        итоге.
+                    </p>
+                </div>
+                <hr>
+                <div class="h3">
+                    <h3>ВОЗВРАТ ТОВАРА И ДЕНЕГЕ +</h3>
+                    <p class="moneyp">Это правила и условия возврата товара и денег. Расскажите посетителям, что нужно
+                        сделать, если они
+                        захотят вернуть товар и получить назад свои деньги. Четкая и ясная политика возврата — это
+                        хороший
+                        способ построить доверительные отношения с клиентами.</p>
+                </div>
+                <hr>
+                <div class="h3">
+                    <h3>ДОСТАВКА +</h3>
+                    <p class="deliveryp">Это информация о доставке заказов. Расскажите, какие способы доставки вы
+                        предлагаете, как
+                        упаковываете заказы и сколько это стоит. Подробная информация о доставке вызывает доверие
+                        клиентов и
+                        помогает принять решение купить у вас товар.</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const header = document.querySelector("header");
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+            if (scrolled > 5) {
+                header.style.backgroundColor = "#232325";
+                header.classList.add("box")
+            } else if (scrolled <= 5) {
+                header.style.backgroundColor = "transparent";
+                header.classList.remove("box")
+            }
+        }
+
+        const black = "https://static.wixstatic.com/media/c837a6_b03daf4fd619491fa5e07adc1c7399d4~mv2.png/v1/fill/w_500,h_500,al_c,q_90,usm_0.66_1.00_0.01/c837a6_b03daf4fd619491fa5e07adc1c7399d4~mv2.webp"
+        const blue = "https://static.wixstatic.com/media/c837a6_b362ea86a18844d495739928ad088b9d~mv2.png/v1/fill/w_500,h_500,al_c,q_90,usm_0.66_1.00_0.01/c837a6_b362ea86a18844d495739928ad088b9d~mv2.webp"
+        const white = "https://static.wixstatic.com/media/c837a6_e211e4cc12b84a2884128090c1c39a5a~mv2.png/v1/fill/w_500,h_500,al_c,q_90,usm_0.66_1.00_0.01/c837a6_e211e4cc12b84a2884128090c1c39a5a~mv2.webp"
+
+        const img = document.querySelector("img");
+
+        const radio1 = document.getElementById("white")
+        const radio2 = document.getElementById("black")
+        const radio3 = document.getElementById("blue")
+
+        radio1.addEventListener("click", () => {
+            img.src = white
+        })
+        radio2.addEventListener("click", () => {
+            img.src = black
+        })
+        radio3.addEventListener("click", () => {
+            img.src = blue
+        })
+
+        const add = document.getElementById("add");
+        add.addEventListener('click', function () {
+            const color = document.querySelector('input[name="color"]:checked').value;
+            const num = document.getElementById("num").value
+            const price = document.getElementById("price").innerHTML
+            var x = `<div><h3><b>${num}</b> 0.4 TrackMate XE ${color}     ${price}</h3></div>`
+            localStorage.setItem("X", x);
+            window.location.href = "buy.html";
+        })
+
+        const h3 = document.querySelectorAll(".h3")
+        h3.forEach((elem) => {
+            elem.addEventListener('click', () => {
+                if (elem.children[1].classList.contains("show")) {
+                    elem.children[1].classList.remove('show')
+                } else {
+                    elem.children[1].classList.add('show')
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

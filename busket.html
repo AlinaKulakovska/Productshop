@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Busket</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inconsolata:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- font-family: 'Dancing Script', cursive; -family: 'Inconsolata', monospace; -->
+    <link rel="stylesheet" href="./style-business.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <header>
+            <div class="header">
+                <h1> <i class='bx bx-heart-circle'></i><a href="./index.html">TrackMate</a></h1>
+                <div class="nav">
+                    <a href="#" class="nav_link">Вопросы и ответы</a>
+                    <a href="#" class="nav_link"><i class='bx bxs-user-circle'></i> Войти</a>
+                    <a href="./busket.html" class="nav_link"><i class='bx bx-shopping-bag'></i></a>
+                    <a href="./buy.html"><button> Купить</button></a> </div>
+            </div>
+    </div>
+    </header>
+
+
+    <div class="busket">
+        <h2>Моя корзина</h2>
+        <hr />
+        <p></p>
+    </div>
+    <script>
+        const header = document.querySelector("header");
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+            if (scrolled > 5) {
+                header.style.backgroundColor = "#232325";
+                header.classList.add("box")
+            } else if (scrolled <= 5) {
+                header.style.backgroundColor = "transparent";
+                header.classList.remove("box")
+            }
+        }
+
+
+        window.addEventListener('storage', event => { 
+            var x = localStorage.getItem("X");
+            $("p").append(x)
+      });
+
+
+
+    </script>
+</body>
+
+</html>
