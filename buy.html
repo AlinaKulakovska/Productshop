@@ -127,13 +127,23 @@
         })
 
         const add = document.getElementById("add");
+        let arr = [];
+        let sum = 0;
         add.addEventListener('click', function () {
             const color = document.querySelector('input[name="color"]:checked').value;
             const num = document.getElementById("num").value
-            const price = document.getElementById("price").innerHTML
-            var x = `<div><h3><b>${num}</b> 0.4 TrackMate XE ${color}     ${price}</h3></div>`
-            localStorage.setItem("X", x);
-            window.location.href = "buy.html";
+            let price = document.getElementById("price").innerHTML
+            price = price.replace('$','')
+            price = parseInt(price, 10)
+            let id = arr.length + 1
+            var x = `<div><h3>${id} <b>${num}</b> 0.4 TrackMate XE ${color} ${price}$</h3></div>`
+            arr.push(x)
+            sum = sum + price*num
+            console.log(arr)
+            console.log(sum)
+            localStorage.setItem("X", arr);
+            localStorage.setItem("Sum",sum);
+            // window.location.href = "buy.html";
         })
 
         const h3 = document.querySelectorAll(".h3")

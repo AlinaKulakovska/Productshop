@@ -34,6 +34,7 @@
         <h2>Моя корзина</h2>
         <hr />
         <p></p>
+        <h4></h4>
     </div>
     <script>
         const header = document.querySelector("header");
@@ -54,11 +55,23 @@
             }
         }
 
-
-        window.addEventListener('storage', event => { 
+        document.addEventListener("DOMContentLoaded", () => {
             var x = localStorage.getItem("X");
+            var sum = localStorage.getItem("Sum");
+            $("p").empty() 
+            $("h4").empty() 
             $("p").append(x)
-      });
+            $("h4").append("Your total is: ",sum,'$')
+  });
+
+        window.addEventListener('storage', () => { 
+            var x = localStorage.getItem("X");
+            var sum = localStorage.getItem("Sum");
+            $("p").empty() 
+            $("h4").empty() 
+            $("p").append(x)
+            $("h4").append("Your total is: ",sum,'$')
+        })
 
 
 
