@@ -36,6 +36,7 @@
         <p></p>
         <h4></h4>
     </div>
+    <button id="clear">Clear busket</button>
     <script>
         const header = document.querySelector("header");
 
@@ -55,12 +56,20 @@
             }
         }
 
+
+        document.getElementById("clear").addEventListener('click', () => {
+                localStorage.clear();
+                window.location.href = "busket.html";
+            })
+
         document.addEventListener("DOMContentLoaded", () => {
-            var x = localStorage.getItem("X");
+            var json = localStorage.getItem("JSON");
+            json = JSON.parse(json);
+            console.log(json)
             var sum = localStorage.getItem("Sum");
             $("p").empty() 
-            $("h4").empty() 
-            $("p").append(x)
+            $("h4").empty()
+            $("p").append(json)
             $("h4").append("Your total is: ",sum,'$')
   });
 

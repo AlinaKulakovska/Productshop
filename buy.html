@@ -136,14 +136,12 @@
             price = price.replace('$','')
             price = parseInt(price, 10)
             let id = arr.length + 1
-            var x = `<div><h3>${id} <b>${num}</b> 0.4 TrackMate XE ${color} ${price}$</h3></div>`
+            var x = `<div><h3>id: ${id}<b> countaty: ${num}</b> 0.4 TrackMate XE ${color} ${price}$</h3></div>`
             arr.push(x)
             sum = sum + price*num
-            console.log(arr)
-            console.log(sum)
-            localStorage.setItem("X", arr);
+            localStorage.setItem("JSON", JSON.stringify(arr));
             localStorage.setItem("Sum",sum);
-            // window.location.href = "buy.html";
+
         })
 
         const h3 = document.querySelectorAll(".h3")
